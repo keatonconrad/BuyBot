@@ -1,0 +1,20 @@
+{
+  "firstName": "Qwer",
+  "lastName": "Ty",
+  "phoneNumber": "8011111111",
+  "email": "email@example.com",
+  "state": "State",
+  "city": "Random City",
+  "address": "2353 Running Water Ct.",
+  "zipCode": "95054",
+  "creditCardNumber": "0101101010101",
+  "expirationMonth": "10",
+  "expirationYear": "2022",
+  "cvv": "000",
+  "targetLink": "https://www.target.com/p/playstation-5-console/-/A-81114595",
+  "walmartLink": "https://www.walmart.com/ip/PlayStation-5-Console/363472942",
+  "bestBuyLink": "https://www.bestbuy.com/site/sony-playstation-5-console/6426149.p",
+  "directLink": "https://direct.playstation.com/en-us/consoles/console/playstation5-console.3005816",
+  "targetEmail": "email2@example.com",
+  "targetPassword": "1312321"
+}
