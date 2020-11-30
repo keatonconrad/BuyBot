@@ -14,7 +14,8 @@ export const scrapeWalmart = async (config: { [key: string]: string }) => {
     creditCardNumber,
     expirationMonth,
     expirationYear,
-    cvv
+    cvv,
+    walmartLink
   } = config
 
   const browser = await puppeteer.launch({
@@ -35,12 +36,7 @@ export const scrapeWalmart = async (config: { [key: string]: string }) => {
       }
     })
 
-    await page.goto(
-      'https://www.walmart.com/ip/PlayStation-5-Console/363472942'
-    )
-    // await page.goto(
-    //   'https://www.walmart.com/ip/Sony-PlayStation-5-DualSense-Wireless-Controller/615549727'
-    // )
+    await page.goto(walmartLink)
 
     // keep refreshing until "Add to Cart is visible"
     while (true) {

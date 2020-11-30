@@ -13,7 +13,8 @@ export const scrapeBestBuy = async (config: { [key: string]: string }) => {
     creditCardNumber,
     expirationMonth,
     expirationYear,
-    cvv
+    cvv,
+    bestBuyLink
   } = config
 
   const browser = await puppeteer.launch({
@@ -34,9 +35,7 @@ export const scrapeBestBuy = async (config: { [key: string]: string }) => {
       }
     })
 
-    await page.goto(
-      'https://www.bestbuy.com/site/sony-playstation-5-console/6426149.p'
-    )
+    await page.goto(bestBuyLink)
 
     // keep refreshing until "Add to Cart is visible"
     while (true) {

@@ -1,12 +1,7 @@
 # PS5bot
 
-## ⚠️ this project is not maintained anymore
 
-Sorry yall, but I have other things to do 😿. Plus there are situations I've no clue how to solve such as traffic spikes and captchas, and situations that are basically impossible to bypass (e.g. loading queues for PlayStation Direct). For these reasons, I'm archiving this project. Hey, at least we don't need to worry about all this for Cyberpunk!
-
-ps5bot is a dead simple auto-checkout bot to buy a PlayStation 5 from PlayStation Direct, Target, and Walmart (planned: Gamestop, BestBuy).
-
-![prestine image of naked man punching tank go boom](https://media.giphy.com/media/ECpTuaJw4kRq0/giphy.gif)
+ps5bot is a dead simple auto-checkout bot to buy a PlayStation 5 from PlayStation Direct, Target, Walmart, and Best Buy.
 
 ## Installation overview
 
@@ -22,7 +17,7 @@ You do not need any computer skills, smarts, or anything of that nature. You are
  3. download this project
     1. `git clone https://github.com/VVNoodle/PS5bot`
  4. Open up a terminal
- 5. go to project directory `cd /the/project/directory`
+ 5. go to project directory `cd /ps5bot`
  6. Install `yarn` by running `npm i -g yarn`
  7. Install dependencies by running `yarn`
  8. Make CLI callable  
@@ -41,7 +36,7 @@ You do not need any computer skills, smarts, or anything of that nature. You are
 
 Configs are read in `config.json` file. You can either run `ps5bot` to generate a config file, or duplicate `configTemplate.json`, rename to `config.json`, and fill out the fields.
 
-```js
+```json
 {
   "firstName": "Qwer",
   "lastName": "Ty",
@@ -55,6 +50,10 @@ Configs are read in `config.json` file. You can either run `ps5bot` to generate 
   "expirationMonth": "10",
   "expirationYear": "2022",
   "cvv": "000",
+  "targetLink": "https://www.target.com/p/playstation-5-console/-/A-81114595",
+  "walmartLink": "https://www.walmart.com/ip/PlayStation-5-Console/363472942",
+  "bestBuyLink": "https://www.bestbuy.com/site/sony-playstation-5-console/6426149.p",
+  "directLink": "https://direct.playstation.com/en-us/consoles/console/playstation5-console.3005816",
   "targetEmail": "email2@example.com",
   "targetPassword": "1312321"
 }

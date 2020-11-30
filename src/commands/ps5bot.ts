@@ -12,7 +12,7 @@ const command: GluegunCommand = {
     const { prompt, print } = toolbox
     print.info(`
     Welcome to your CLI. Please enter your checkout info in the following prompts.
-    All data will only be stored in your computer. 
+    All data will only be stored in your computer.
     You can choose to fill out the configs in config.json based on template provided in configTemplate.json.
     `)
     const cronSchedule = await inputSchedule(prompt)
@@ -28,6 +28,11 @@ const command: GluegunCommand = {
     const expirationMonth = await input('expirationMonth', prompt, print)
     const expirationYear = await input('expirationYear', prompt, print)
     const cvv = await input('cvv', prompt, print)
+    const targetLink = await input('targetLink', prompt, print)
+    const walmartLink = await input('walmartLink', prompt, print)
+    const bestBuyLink = await input('bestBuyLink', prompt, print)
+    const directLink = await input('directLink', prompt, print)
+
 
     print.info(`
     ...Saving config...
@@ -46,7 +51,11 @@ const command: GluegunCommand = {
       expirationMonth,
       expirationYear,
       cvv,
-      cronSchedule
+      cronSchedule,
+      targetLink,
+      walmartLink,
+      bestBuyLink,
+      directLink
     }
     fs.writeFileSync('config.json', JSON.stringify(config, null, 4))
 

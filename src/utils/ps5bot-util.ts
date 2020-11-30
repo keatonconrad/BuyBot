@@ -124,7 +124,7 @@ export const inputTargetEmailPassword = async (
     targetConfig.password = targetPassword
   } else {
     // if they didn't provide one, we error out
-    print.error(`No target password specified!`)
+    print.error(`No Target password specified!`)
     return
   }
   return targetConfig

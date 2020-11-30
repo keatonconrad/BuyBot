@@ -15,7 +15,8 @@ export const scrapeTarget = async (config: { [key: string]: string }) => {
     expirationYear,
     cvv,
     targetEmail,
-    targetPassword
+    targetPassword,
+    targetLink
   } = config
 
   if (!targetEmail || !targetPassword) {
@@ -64,12 +65,7 @@ export const scrapeTarget = async (config: { [key: string]: string }) => {
       console.log("join request doesn't exists")
     }
 
-    await page.goto(
-      'https://www.target.com/p/playstation-5-console/-/A-81114595'
-    )
-    // await page.goto(
-    //   'https://www.target.com/p/dualsense-wireless-controller-for-playstation-5/-/A-81114477'
-    // )
+    await page.goto(targetLink)
 
     await page.waitForTimeout(4000)
 

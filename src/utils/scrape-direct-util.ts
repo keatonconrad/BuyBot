@@ -51,7 +51,8 @@ export const scrapeDirect = async (config: { [key: string]: string }) => {
     creditCardNumber,
     expirationMonth,
     expirationYear,
-    cvv
+    cvv,
+    directLink
   } = config
 
   const browser = await puppeteer.launch({
@@ -62,12 +63,13 @@ export const scrapeDirect = async (config: { [key: string]: string }) => {
 
   try {
     const page = await browser.newPage()
-    // await page.goto(
-    //   'https://direct.playstation.com/en-us/accessories/accessory/dualsense-wireless-controller.3005715'
-    // )
-    await page.goto(
-      'https://direct.playstation.com/en-us/consoles/console/playstation5-console.3005816'
-    )
+
+    await page.goto(directLink)
+
+    // wait for possible captcha
+    await page.waitForSelector('button[aria-label="Add to Cart"]', {
+      timeout: 900000
+    })
 
     await waitTillSelectorAppears(
       page,
