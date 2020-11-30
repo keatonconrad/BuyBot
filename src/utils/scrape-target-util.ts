@@ -59,11 +59,9 @@ export const scrapeTarget = async (config: { [key: string]: string }) => {
     await page.waitForTimeout(6000)
     const isJoinRequest = await page.$('#circle-join-free')
     if (isJoinRequest) {
-      console.log('join request exists')
       const skipButton = await page.$('#circle-skip')
       await skipButton.click()
     } else {
-      console.log("join request doesn't exists")
     }
 
     await page.goto(targetLink)

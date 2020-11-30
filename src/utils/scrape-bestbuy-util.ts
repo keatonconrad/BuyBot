@@ -39,11 +39,11 @@ export const scrapeBestBuy = async (config: { [key: string]: string }) => {
 
     await page.goto(bestBuyLink)
 
-    // keep refreshing until "Add to Cart is visible"
+    // Keep refreshing until "Add to Cart" is visible
     while (true) {
       try {
         await page.waitForSelector(
-          'button.add-to-cart-button',
+          'button.btn.btn-primary.btn-lg.btn-block.btn-leading-ficon.add-to-cart-button',
           {
             timeout: 10000
           }
@@ -55,7 +55,7 @@ export const scrapeBestBuy = async (config: { [key: string]: string }) => {
     }
 
     const addToCartButton = await page.$(
-      'button.add-to-cart-button'
+      'button.btn.btn-primary.btn-lg.btn-block.btn-leading-ficon.add-to-cart-button'
     )
     await addToCartButton.click()
 
