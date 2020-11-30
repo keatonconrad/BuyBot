@@ -65,7 +65,7 @@ export const scrapeTarget = async (config: { [key: string]: string }) => {
     }
 
     await page.goto(
-      'https://www.target.com/p/playstation-5-digital-edition-console/-/A-81114596'
+      'https://www.target.com/p/playstation-5-console/-/A-81114595'
     )
     // await page.goto(
     //   'https://www.target.com/p/dualsense-wireless-controller-for-playstation-5/-/A-81114477'
@@ -175,7 +175,7 @@ export const scrapeTarget = async (config: { [key: string]: string }) => {
     // )
     // await placeOrderButton.click()
   } catch (error) {
-    console.log(error)
+    console.error(error)
   } finally {
     // await browser.close();
   }

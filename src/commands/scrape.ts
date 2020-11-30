@@ -1,5 +1,5 @@
 import { GluegunToolbox } from 'gluegun'
-import { PLAYSTATION_DIRECT, TARGET, WALMART } from '../contants'
+import { PLAYSTATION_DIRECT, TARGET, WALMART, BEST_BUY } from '../contants'
 
 module.exports = {
   name: 'scrape',
@@ -13,23 +13,31 @@ module.exports = {
       type: 'multiselect',
       name: 'sitesToScrape',
       message: `Which sites do you want to scrape? (press space to select)`,
-      choices: [PLAYSTATION_DIRECT, TARGET, WALMART]
+      choices: [PLAYSTATION_DIRECT, TARGET, WALMART, BEST_BUY]
     })
 
     if (sitesToScrape.length === 0) {
-      await Promise.allSettled([
-        scrape(TARGET),
+      await Promise.all([
         scrape(WALMART),
-        scrape(PLAYSTATION_DIRECT)
-      ])
+        scrape(TARGET),
+        scrape(PLAYSTATION_DIRECT),
+        scrape(BEST_BUY)
+      ].map(p => p.catch(e => e)))
     } else {
-      if (sitesToScrape.includes(TARGET)) {
-        await scrape(TARGET)
-      } else if (sitesToScrape.includes(WALMART)) {
-        await scrape(WALMART)
-      } else {
-        await scrape(PLAYSTATION_DIRECT)
+      let scraper_funcs = [];
+      if (sitesToScrape.includes(WALMART)) {
+        scraper_funcs.push(scrape(WALMART))
       }
+      if (sitesToScrape.includes(TARGET)) {
+        scraper_funcs.push(scrape(TARGET))
+      }
+      if (sitesToScrape.includes(PLAYSTATION_DIRECT)) {
+        scraper_funcs.push(scrape(PLAYSTATION_DIRECT))
+      }
+      if (sitesToScrape.includes(BEST_BUY)) {
+        scraper_funcs.push(scrape(BEST_BUY))
+      }
+      await Promise.all(scraper_funcs.map(p => p.catch(e => e)))
     }
   }
 }

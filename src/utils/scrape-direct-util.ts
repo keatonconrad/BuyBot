@@ -163,7 +163,7 @@ export const scrapeDirect = async (config: { [key: string]: string }) => {
     // )
     // LETS_GOGOGO.click()
   } catch (error) {
-    console.log(error)
+    console.error(error)
   } finally {
     // await browser.close();
   }

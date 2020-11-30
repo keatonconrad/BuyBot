@@ -1,10 +1,12 @@
 import * as fs from 'fs'
 import { GluegunToolbox } from 'gluegun'
 import * as schedule from 'node-schedule'
-import { TARGET, WALMART } from '../contants'
+import { TARGET, WALMART, BEST_BUY } from '../contants'
 import { scrapeTarget } from '../utils/scrape-target-util'
 import { scrapeDirect } from '../utils/scrape-direct-util'
 import { scrapeWalmart } from '../utils/scrape-walmart-util'
+import { scrapeBestBuy } from '../utils/scrape-bestbuy-util'
+
 
 module.exports = (toolbox: GluegunToolbox) => {
   toolbox.scrape = async (site: string) => {
@@ -17,6 +19,8 @@ module.exports = (toolbox: GluegunToolbox) => {
       scraperToRun = scrapeTarget
     } else if (site === WALMART) {
       scraperToRun = scrapeWalmart
+    } else if (site === BEST_BUY) {
+      scraperToRun = scrapeBestBuy
     }
 
     if (!cronJobSchedule) {

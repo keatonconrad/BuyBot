@@ -123,7 +123,7 @@ export const scrapeWalmart = async (config: { [key: string]: string }) => {
       sound: true
     })
   } catch (error) {
-    console.log(error)
+    console.error(error)
   } finally {
     // await browser.close();
   }
