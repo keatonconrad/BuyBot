@@ -35,6 +35,7 @@ Configs are read in `config.json` file. You can either run `buybot` to generate 
   "phoneNumber": "8011111111",
   "email": "email@example.com",
   "state": "State",
+  "shortState": "ST",
   "city": "Random City",
   "address": "2353 Running Water Ct.",
   "zipCode": "95054",

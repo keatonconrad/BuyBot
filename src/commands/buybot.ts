@@ -21,6 +21,7 @@ const command: GluegunCommand = {
     const phoneNumber = await input('phoneNumber', prompt, print)
     const email = await input('email', prompt, print)
     const state = await input('state', prompt, print)
+    const shortState = await input('stateAbbreviation', prompt, print)
     const city = await input('city', prompt, print)
     const address = await input('address', prompt, print)
     const zipCode = await input('zipCode', prompt, print)
@@ -44,6 +45,7 @@ const command: GluegunCommand = {
       phoneNumber,
       email,
       state,
+      shortState,
       city,
       address,
       zipCode,

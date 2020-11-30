@@ -10,6 +10,7 @@ export const scrapeBestBuy = async (config: { [key: string]: string }) => {
     city,
     zipCode,
     address,
+    shortState,
     creditCardNumber,
     expirationMonth,
     expirationYear,
@@ -92,7 +93,7 @@ export const scrapeBestBuy = async (config: { [key: string]: string }) => {
     await page.type('input[id="consolidatedAddresses.ui_address_2.lastName"]', lastName)
     await page.type('input[id="consolidatedAddresses.ui_address_2.street"]', address)
     await page.type('input[id="consolidatedAddresses.ui_address_2.city"]', city)
-    await page.type('select[id="consolidatedAddresses.ui_address_2.state"]', 'KS')
+    await page.type('select[id="consolidatedAddresses.ui_address_2.state"]', shortState)
     await page.type('input[id="consolidatedAddresses.ui_address_2.zipcode"]', zipCode)
 
     await page.type('input[id="user.emailAddress"]', email)
