@@ -38,7 +38,7 @@ export const inputSchedule = async (prompt: GluegunPrompt) => {
   const { scheduleOption } = await prompt.ask({
     type: 'select',
     name: 'scheduleOption',
-    message: `Do you want to run ps5bot immediately, or in a specific time and date?`,
+    message: `Do you want to run BuyBot immediately, or in a specific time and date?`,
     choices: ['later', 'immediate']
   })
   const isSchedule = scheduleOption === 'later'

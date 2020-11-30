@@ -1,40 +1,32 @@
-# PS5bot
+# BuyBot
 
+BuyBot is a simple auto-checkout bot to buy a product from PlayStation Direct, Target, Walmart, and/or Best Buy.
 
-ps5bot is a dead simple auto-checkout bot to buy a PlayStation 5 from PlayStation Direct, Target, Walmart, and Best Buy.
-
-## Installation overview
+## Installation Overview
 
 Linux, macOS, and Windows are all capable operating systems.
 
-You do not need any computer skills, smarts, or anything of that nature. You are very capable as you have made it this far. Some basic understanding how a terminal, git, and or Node.js is a bonus, but that does not limit you to getting PS5bot running!
+You do not need any computer skills, smarts, or anything of that nature. You are very capable as you have made it this far. Some basic understanding how a terminal, git, and or Node.js is a bonus, but that does not limit you to getting BuyBot running!
 
 ### Installation
 
  1. [Install Node.js](https://nodejs.org/en/)
-    1. version should be >12.9
  2. [Install git](https://git-scm.com/)
- 3. download this project
-    1. `git clone https://github.com/VVNoodle/PS5bot`
- 4. Open up a terminal
- 5. go to project directory `cd /ps5bot`
- 6. Install `yarn` by running `npm i -g yarn`
- 7. Install dependencies by running `yarn`
- 8. Make CLI callable  
-    `yarn link`  
+ 3. Clone this repo
+    `git clone https://github.com/keatonconrad/BuyBot`
+ 4. Go to the project directory `cd BuyBot`
+ 5. Install dependencies by running `npm install`
+ 6. Make the CLI callable by running `yarn link`  
 
-## Setup
+## Usage
 
- 1. Run ps5bot. You'll be prompted to fill in required checkout info  
-    `ps5bot`  
-    **Note: Below steps are still TODO**  
- 2. Run scraper
-    `ps5bot scrape`
+ 1. Run BuyBot by running the `buybot` command. You'll be prompted to fill in required checkout info.
+ 2. Run the scraper with `buybot scrape`
     - you will be asked to select the sites to run the bot. If you don't select anything, it will try to run on all websites.
 
 ## Bot Configs
 
-Configs are read in `config.json` file. You can either run `ps5bot` to generate a config file, or duplicate `configTemplate.json`, rename to `config.json`, and fill out the fields.
+Configs are read in `config.json` file. You can either run `buybot` to generate a config file, or duplicate `configTemplate.json`, rename to `config.json`, and fill out the fields.
 
 ```json
 {
@@ -70,6 +62,7 @@ Configs are read in `config.json` file. You can either run `ps5bot` to generate 
 | PlayStation Direct | MasterCard, Visa, Discover                   |
 | Walmart            | MasterCard, Visa, Discover, American Express |
 | Target             | MasterCard, Visa, Discover, American Express |
+| Best Buy           | MasterCard, Visa, Discover, American Express |
 
 Make sure to run this script and keep the terminal open around the time of the schedule
 
@@ -79,9 +72,8 @@ Make sure to run this script and keep the terminal open around the time of the s
 - There's a chance WalMart checkout ask for captcha after entering address. If this is the case, bot will pause. As soon as you complete them, bot will resume.
 - You need a login for Target. And make sure no existing carts.
 
-PS5bot exists to:
+BuyBot is **not** intended to scalp large quantities of products. BuyBot is only intended for personal use, not for scalping. Please don't use BuyBot for anything scammy, scummy, or otherwise immoral.
 
-- practice web scraping and to
-- buy a **single** PS5 for myself  
-The second point is fair imo since it's pretty much an automated version of constantly clicking refresh to buy stuff.  
-Also: This is not intended to scalp massive quantities of PS5s. That shit aint cool.
+## Credit
+
+BuyBot is originally adapted from [PS5bot](https://github.com/VVNoodle/PS5bot) by [VVNoodle](https://github.com/VVNoodle).

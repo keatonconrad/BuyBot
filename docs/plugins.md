@@ -1,10 +1,10 @@
-# Plugin guide for ps5bot
+# Plugin guide for BuyBot
 
-Plugins allow you to add features to ps5bot, such as commands and
+Plugins allow you to add features to BuyBot, such as commands and
 extensions to the `toolbox` object that provides the majority of the functionality
-used by ps5bot.
+used by BuyBot.
 
-Creating a ps5bot plugin is easy. Just create a repo with two folders:
+Creating a BuyBot plugin is easy. Just create a repo with two folders:
 
 ```
 commands/
@@ -42,6 +42,6 @@ This is then accessible in your plugin's commands as `toolbox.bar`.
 
 # Loading a plugin
 
-To load a particular plugin (which has to start with `ps5bot-*`),
-install it to your project using `npm install --save-dev ps5bot-PLUGINNAME`,
-and ps5bot will pick it up automatically.
+To load a particular plugin (which has to start with `buybot-*`),
+install it to your project using `npm install --save-dev buybot-PLUGINNAME`,
+and BuyBot will pick it up automatically.

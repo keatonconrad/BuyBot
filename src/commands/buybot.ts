@@ -4,16 +4,16 @@ import {
   input,
   inputSchedule,
   inputTargetEmailPassword
-} from '../utils/ps5bot-util'
+} from '../utils/buybot-util'
 
 const command: GluegunCommand = {
-  name: 'ps5bot',
+  name: 'buybot',
   run: async toolbox => {
     const { prompt, print } = toolbox
     print.info(`
-    Welcome to your CLI. Please enter your checkout info in the following prompts.
+    Welcome to the BuyBot CLI. Please enter your checkout info in the following prompts.
     All data will only be stored in your computer.
-    You can choose to fill out the configs in config.json based on template provided in configTemplate.json.
+    You can choose to fill out the configs in config.json based on the template provided in README.md.
     `)
     const cronSchedule = await inputSchedule(prompt)
     const firstName = await input('firstName', prompt, print)
@@ -77,7 +77,7 @@ const command: GluegunCommand = {
     print.info(`
     We're ready to go. Enter the following comand to run the scraper:
 
-      ps5bot scrape
+      buybot scrape
     `)
   }
 }

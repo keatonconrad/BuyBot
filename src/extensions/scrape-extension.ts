@@ -26,7 +26,7 @@ module.exports = (toolbox: GluegunToolbox) => {
     if (!cronJobSchedule) {
       await scraperToRun(config)
     } else {
-      toolbox.print.info('scheduled ps5bot for checkout')
+      toolbox.print.info('Scheduled BuyBot for checkout')
       schedule.scheduleJob(cronJobSchedule, async () => {
         await scraperToRun(config)
       })
